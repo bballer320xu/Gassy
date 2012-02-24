@@ -1,3 +1,10 @@
-require "../gassy"
+require "../lib/gassy"
+require "nokogiri"
 
-puts Gassy.fetch_results
+
+
+    file = Gassy.fetch_results
+
+    puts file.scan(/San Francisco*Seattle/)
+    puts file.scan(/Cities*Seattle/)
+
