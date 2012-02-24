@@ -1,4 +1,3 @@
-
 = Gassy {<img src="https://secure.travis-ci.org/bballer320xu/Gassy.png?branch=master&rvm=1.9.3" alt="Build Status" />}[http://travis-ci.org/bballer320xu/Gassy]
 
 * https://github.com/bballer320xu/Gassy
@@ -18,27 +17,26 @@ Gassy is a simple gem that processes Gas price data publicly available on the U.
 
   # First Initiate Gassy
 
-	####
+
   gassy = Gassy.new
-  ####
+
 
   # Then get lots of data & process it.
 
-  ####
+
   gassy.get_all_price_data.each_pair do |entity, sub_entities|
 		puts "processing #{entity}"
 		sub_entities.each_pair do |sub_entity, price|
 			puts "The gas price in #{sub_entity} is #{price}."
 		end
 	end
-  ####
-
+ 
   # Or get a specific piece of data
 
-  ####	
+	
   price = gassy.extract_one_price("Boston")
 	puts "The gas price in Boston is #{price}."
-  ####
+
 
 == REQUIREMENTS:
 
