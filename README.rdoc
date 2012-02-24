@@ -27,6 +27,7 @@ Gassy is a simple gem that processes Gas price data publicly available on the U.
 		end
 	end
 
+
 # Or get a specific piece of data
 	
   price = gassy.extract_one_price("Boston")
