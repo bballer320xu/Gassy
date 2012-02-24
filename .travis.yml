@@ -12,4 +12,4 @@ rvm:
 before_script:
   - gem install nokogiri
   - gem install rspec
-script: rake test
+script: rake rspec
