@@ -14,25 +14,24 @@ Gassy is a simple gem that processes Gas price data publicly available on the U.
 
 == SYNOPSIS:
 
-# First Initiate Gassy
-  require 'gassy'
-  gassy = Gassy.new
+	# First Initiate Gassy
+  	require 'gassy'
+  	gassy = Gassy.new
 
-# Then get lots of data & process it.
 
-  gassy.get_all_price_data.each_pair do |entity, sub_entities|
-		puts "processing #{entity}"
-		sub_entities.each_pair do |sub_entity, price|
-			puts "The gas price in #{sub_entity} is #{price}."
+	# Then get lots of data & process it.
+		gassy.get_all_price_data.each_pair do |entity, sub_entities|
+			puts "processing #{entity}"
+			sub_entities.each_pair do |sub_entity, price|
+				puts "The gas price in #{sub_entity} is #{price}."
+			end
 		end
-	end
 
-# Or get a specific piece of data
-	
-  price = gassy.extract_one_price("Boston")
-	puts "The gas price in Boston is #{price}."
+
+	#Or get a specific piece of data	
+  	price = gassy.extract_one_price("Boston")
+		puts "The gas price in Boston is #{price}."
   
-
 == REQUIREMENTS:
 
 * ruby 1.9
