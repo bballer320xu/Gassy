@@ -7,11 +7,10 @@ Gem::Specification.new do |s|
   s.version     = Gassy::VERSION
   s.authors     = ["Matt Lucas"]
   s.email       = ["matt.k.lucas@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{This gem will gather weekly gas prices from the U.S. Energy Information Information site}
+  s.summary     = %q{Gas Price Retrieval Gem}
   s.description = %q{This gem will gather weekly gas prices from the U.S. Energy Information Information site}
+  s.homepage    = "https://github.com/bballer320xu/Gassy"
 
-  s.rubyforge_project = "gassy"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
