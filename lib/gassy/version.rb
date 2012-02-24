@@ -1,3 +1,3 @@
-module Gassy
+class Gassy
   VERSION = "0.0.1"
 end
