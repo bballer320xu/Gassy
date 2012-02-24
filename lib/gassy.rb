@@ -1,26 +1,28 @@
 require "open-uri"
-require "../lib/gassy_constants"
+require "gassy/gassy_utils"
+require "gassy/gassy_constants"
 
 class Gassy
   
-  def initialize
-    @file = open(GassyConstants::SOURCE_FILE).read  
-    @file = @file.sub("West Coast less California", "North West Coast")  
+  attr_reader :file
+  
+  def initialize(file = GassyConstants::SOURCE_FILE)
+    @file = open(file).read  
+    @file = GassyUtils.rename(@file, "West Coast less California", "North West Coast")  
   end
   
-  def get_cities
-    GassyConstants::CITIES
+  def get_all_price_data
+    @data = {:cities => {}, :states => {}, :regions => {}}
+    @data.each_key do |key|
+      GassyUtils.send("#{key}").each do |entity|
+        @data[key][entity] = extract_one_price(entity)
+      end
+    end
+
+    @data
   end
-  
-  def get_states
-    GassyConstants::STATES
-  end
-  
-  def get_regions
-    GassyConstants::REGIONS
-  end
-  
-  def extract_price(entity)
+
+  def extract_one_price(entity)
     condensed = GassyUtils.condense_xml(@file)
     remove_diesel = condensed.match(/.*On-Highway/).to_s
     listing = remove_diesel.match(/\d*.\d*\D*#{entity.gsub(/\s+/, "")}(&lt;)/).to_s
