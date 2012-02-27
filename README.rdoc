@@ -1,4 +1,3 @@
-
 = Gassy {<img src="https://secure.travis-ci.org/bballer320xu/Gassy.png?branch=master&rvm=1.9.3" alt="Build Status" />}[http://travis-ci.org/bballer320xu/Gassy]
 
 * https://github.com/bballer320xu/Gassy
@@ -15,7 +14,7 @@ Gassy is a simple gem that processes Gas price data publicly available on the U.
 == SYNOPSIS:
 
   # First Initiate Gassy
-  require 'gassy'
+  require 'gassy' 
 
 
   # Then get lots of data & process it.
